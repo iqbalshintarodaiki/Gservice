@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>GService Servis HP Panggilan Semarang</title>
+
+  <meta name="description" content="GService Semarang melayani servis HP panggilan dan konter di Semarang. Ganti LCD, baterai, connector charger, software, dan perbaikan HP lainnya.">
+  <meta name="keywords" content="servis hp semarang, servis hp panggilan semarang, ganti lcd semarang, ganti baterai hp semarang, servis iphone semarang">
+  <meta name="author" content="GService Semarang">
+  <meta name="robots" content="index, follow">
+
+  <meta name="google-site-verification" content="XGol371p5eysMEdiZguXHhZNzzfWd4_p7k4lClTczWw" />
+
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="GService" />
+<link rel="manifest" href="/site.webmanifest" />
+
+
+<style>
+.tel-btn{
+  display:block;
+  text-align:center;
+  margin-top:10px;
+  padding:14px 25px;
+  background:linear-gradient(135deg,#f97316,#ea580c);
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:bold;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+}
+
+.tel-btn:hover{opacity:.9;}
+
+body{
+  font-family:Arial,sans-serif;
+  margin:0;
+  overflow-x:hidden;
+  background:linear-gradient(180deg,#e0f2fe,#f8fafc,#ffffff);
+
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+header{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(135deg,#2563eb,#06b6d4);
+  color:white;
+  padding:60px 20px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+header::after{
+  content:"";
+  position:absolute;
+  width:320px;
+  height:320px;
+  background:rgba(255,255,255,0.12);
+  border-radius:50%;
+  top:-120px;
+  right:-120px;
+  filter:blur(25px);
+}
+
+header h1{
+  font-size:28px;
+  letter-spacing:1px;
+}
+
+header p{
+  opacity:0.9;
+}
+
+section{
+  max-width:900px;
+  margin:20px auto;
+  padding:20px;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  margin:15px 0;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(37,99,235,.15);
+  transition:0.25s ease;
+  border:1px solid rgba(37,99,235,0.08);
+
+  position:relative;
+  overflow:hidden;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 12px 25px rgba(37,99,235,.18);
+}
+
+input,select,textarea{
+  width:100%;
+  padding:12px;
+  margin:6px 0;
+  box-sizing:border-box;
+  border:1px solid #cbd5e1;
+  border-radius:10px;
+  transition:0.2s;
+  background:#ffffff;
+}
+
+input:focus,select:focus,textarea:focus{
+  outline:none;
+  border-color:#2563eb;
+  box-shadow:0 0 0 3px rgba(37,99,235,0.15);
+}
+
+button{
+background:linear-gradient(135deg,#25D366,#128C7E);
+color:white;
+border:none;
+padding:14px 20px;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+width:100%;
+}
+
+h2{color:#2563eb;}
+
+h3{color:#1e40af;}
+
+footer{
+text-align:center;
+padding:25px;
+background:#0f172a;
+color:white;
+}
+
+
+table tr:hover{
+background:#f1f5f9;
+}
+
+.floating-wa{
+  position:fixed;
+  bottom:95px;
+  right:20px;
+  width:60px;
+  height:60px;
+  background:#25D366;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+  z-index:9998;
+
+  animation:float 3s ease-in-out infinite;
+  transition:0.25s ease;
+}
+
+.floating-wa:hover{
+  transform:scale(1.12);
+}
+
+.floating-wa img{
+width:35px;
+height:35px;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:3px;
+  background:linear-gradient(90deg,#2563eb,#22c55e,#06b6d4);
+  opacity:0.7;
+}
+
+/* tombol lebih premium */
+button, .tel-btn, .wa-btn{
+  letter-spacing:0.3px;
+  font-weight:700;
+}
+
+
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-6px);}
+}
+
+#harga-servis{
+  background:#f8fafc;
+}
+
+/* GRID BRAND jadi lebih rapi */
+.brand-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:18px;
+}
+
+/* CARD BRAND PREMIUM */
+.brand-card{
+  background:white;
+  border-radius:16px;
+  padding:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.06);
+  border:1px solid rgba(37,99,235,0.08);
+  transition:0.25s ease;
+}
+
+.brand-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 35px rgba(37,99,235,0.15);
+}
+
+/* TITLE BRAND */
+.brand-card h3{
+  margin-bottom:12px;
+  font-size:18px;
+}
+
+/* LIST HARGA LEBIH RAPI */
+.brand-card ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.brand-card ul li{
+  padding:10px 12px;
+  margin-bottom:8px;
+  background:#f1f5f9;
+  border-radius:10px;
+  font-size:13px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.harga-tambahan{
+  margin-top:40px;
+  padding:20px;
+  background:white;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+/* PREMIUM SECTION SPACING */
+.harga-tambahan,
+.premium-pricing{
+  margin-top:25px;
+}
+
+
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:14px;
+  margin-top:10px;
+}
+
+/* CARD ICON STYLE */
+.service-card{
+  background:white;
+  border-radius:16px;
+  padding:18px 10px;
+  text-align:center;
+  box-shadow:0 8px 20px rgba(0,0,0,0.06);
+  border:1px solid rgba(37,99,235,0.08);
+  transition:0.25s ease;
+  cursor:pointer;
+}
+
+/* hover effect */
+.service-card:hover{
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:0 15px 30px rgba(37,99,235,0.15);
+}
+
+/* ICON STYLE */
+.service-card .icon{
+  font-size:28px;
+  margin-bottom:8px;
+}
+
+/* TEXT */
+.service-card span{
+  display:block;
+  font-size:13px;
+  font-weight:600;
+  color:#0f172a;
+}
+
+/* LABEL kecil */
+.service-card small{
+  font-size:11px;
+  color:#64748b;
+}
+
+/* =========================
+   ORDER BUTTON PRO CLEAN
+========================= */
+
+.sticky-wa{
+  position:fixed;
+  bottom:20px;
+  left:0;
+  right:0;
+
+  margin:0 auto;
+
+  width:90%;
+  max-width:420px;
+
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+  color:white;
+
+  padding:14px 18px;
+  border-radius:14px;
+
+  font-weight:700;
+  font-size:15px;
+  text-align:center;
+  text-decoration:none;
+
+  box-shadow:0 15px 30px rgba(34,197,94,0.25);
+  z-index:9999;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+
+/* hover lebih halus */
+.sticky-wa:hover{
+  transform:translateX(-50%) translateY(-3px);
+  box-shadow:0 20px 40px rgba(34,197,94,0.35);
+}
+
+/* efek klik */
+.sticky-wa:active{
+  transform:translateX(-50%) scale(0.98);
+}
+
+.trust-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:14px;
+  margin-top:15px;
+}
+
+.trust-card{
+  background:linear-gradient(180deg,#ffffff,#f8fafc);
+  border:1px solid rgba(37,99,235,0.08);
+  border-radius:16px;
+  padding:18px;
+  text-align:center;
+  box-shadow:0 8px 20px rgba(0,0,0,0.05);
+  transition:0.25s ease;
+}
+
+.trust-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 30px rgba(37,99,235,0.12);
+}
+
+.trust-card .icon{
+  font-size:26px;
+  margin-bottom:8px;
+}
+
+.trust-card h3{
+  font-size:14px;
+  margin-bottom:6px;
+  color:#0f172a;
+}
+
+.trust-card p{
+  font-size:12px;
+  color:#64748b;
+  line-height:1.4;
+}
+
+.review-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+  margin-top:15px;
+}
+
+.review-card{
+  background:white;
+  border-radius:16px;
+  padding:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.06);
+  border:1px solid rgba(37,99,235,0.08);
+  transition:0.25s ease;
+}
+
+.review-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 30px rgba(37,99,235,0.15);
+}
+
+.review-card .stars{
+  color:#facc15;
+  font-size:14px;
+  margin-bottom:8px;
+}
+
+.review-card p{
+  font-size:13px;
+  color:#0f172a;
+  line-height:1.5;
+  margin-bottom:10px;
+}
+
+.review-card span{
+  font-size:12px;
+  color:#64748b;
+}
+
+.price-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 0;
+  border-bottom:1px solid rgba(0,0,0,0.06);
+  font-size:14px;
+}
+
+.price-item span{
+  color:#334155;
+}
+
+.price-item b{
+  color:#16a34a;
+  font-weight:700;
+}
+
+.brand-card h3{
+  margin-bottom:10px;
+  font-size:16px;
+  color:#1e40af;
+}
+
+.area-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:12px;
+  margin-top:15px;
+}
+
+.area-card{
+  background:linear-gradient(135deg,#ffffff,#f1f5f9);
+  border:1px solid rgba(37,99,235,0.08);
+  padding:14px;
+  border-radius:14px;
+  text-align:center;
+  font-size:14px;
+  font-weight:600;
+  color:#1e40af;
+  transition:0.25s ease;
+  box-shadow:0 5px 12px rgba(0,0,0,0.04);
+}
+
+.area-card:hover{
+  transform:translateY(-4px);
+  background:#e0f2fe;
+  box-shadow:0 10px 20px rgba(37,99,235,0.15);
+}
+
+.sticky-action{
+  transition:0.3s ease;
+}
+
+.hero{
+  background: linear-gradient(135deg,#2563eb,#0ea5e9);
+  color:white;
+  padding:80px 20px;
+  text-align:center;
+  border-radius:0 0 30px 30px;
+}
+
+.hero-content{
+  max-width:900px;
+  margin:auto;
+}
+
+.hero h1{
+  font-size:34px;
+  margin-bottom:10px;
+  letter-spacing:0.5px;
+}
+
+.subtitle{
+  font-size:15px;
+  opacity:0.9;
+  margin-bottom:20px;
+}
+
+.hero-badges{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:25px;
+}
+
+.hero-badges span{
+  background:rgba(255,255,255,0.15);
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:12px;
+}
+
+.hero-btn{
+  display:inline-block;
+  padding:12px 22px;
+  background:white;
+  color:#2563eb;
+  font-weight:bold;
+  border-radius:12px;
+  text-decoration:none;
+  transition:0.2s;
+}
+
+.hero-btn:hover{
+  transform:scale(1.05);
+}
+
+
+.price-note{
+  margin-top:12px;
+  padding:8px;
+  background:#ffffff;
+  color:#000;
+  border-radius:8px;
+  font-size:12px;
+  text-align:center;
+}
+
+
+.article-btn{
+    display:block;
+    width:100%;
+    max-width:320px;
+    margin:20px auto;
+    padding:10px;
+    background:#f97316;
+    color:white;
+    text-align:center;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+    font-size:15px;
+}
+
+.promo-banner{
+  max-width:1200px;
+  margin:40px auto;
+  padding:0 15px;
+}
+
+.promo-banner img{
+  width:100%;
+  display:block;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.logo-wrap{
+  text-align:center;
+}
+
+.logo{
+  width:140px;
+  height:auto;
+  display:block;
+  margin:0 auto;
+}
+
+.seo-title{
+  display:none;
+}
+
+
+</style>
+</head>
+
+<body>
+  
+<header class="hero">
+  
+  <div class="hero-content">
+
+     <div class="logo-wrap">
+  <img src="logo-gservice.png" alt="GService Semarang" class="logo">
+  <h1 class="seo-title">GService Servis HP Panggilan Semarang</h1>
+</div>
+    
+    <p class="subtitle">Service HP Panggilan & Konter • Cepat • Bergaransi • Datang ke Lokasi Anda</p>
+
+    <div class="hero-badges">
+      <span>⚡ Respon < 10 Menit</span>
+      <span>🔧 Teknisi Berpengalaman</span>
+      <span>🛡️ Garansi Servis</span>
+    </div>
+    
+    
+</header>
+
+
+<section>
+<h2>Kenapa Memilih GService?</h2>
+
+<div class="card">✅ Servis Panggilan ke Rumah</div>
+<div class="card">✅ Konsultasi Gratis</div>
+<div class="card">✅ Garansi Pengerjaan</div>
+<div class="card">✅ Sparepart Berkualitas</div>
+<div class="card">✅ Teknisi Berpengalaman</div>
+
+</section>
+
+<section>
+  <h2>Kenapa Pelanggan Percaya Kami?</h2>
+
+  <div class="trust-grid">
+
+    <div class="trust-card">
+      <div class="icon">⭐</div>
+      <h3>5.0 Rating</h3>
+      <p>Dipercaya pelanggan di Semarang & sekitarnya</p>
+    </div>
+
+    <div class="trust-card">
+      <div class="icon">⚡</div>
+      <h3>Respon Cepat</h3>
+      <p>Rata-rata respon di bawah 10 menit</p>
+    </div>
+
+    <div class="trust-card">
+      <div class="icon">🏠</div>
+      <h3>Servis Panggilan</h3>
+      <p>Teknisi datang ke lokasi Anda</p>
+    </div>
+
+    <div class="trust-card">
+      <div class="icon">🛡️</div>
+      <h3>Bergaransi</h3>
+      <p>Garansi untuk layanan tertentu</p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Testimoni Pelanggan</h2>
+
+  <div class="review-grid">
+
+    <div class="review-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>"Servis cepat Rapi,kemaren masang lcd samsung sama batre redmi murah tidak ada biaya tambahan."</p>
+      <span>- danang kristiawan, wonosari gunungpati</span>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>"Poco x6 pro layar sempet ghost touch di bersihin sama masnya normal lagi alhamdulillah ngga sampe ganti lcd terima kasih mas gendut 🤣."</p>
+      <span>- syaif ahmad,leban Kendal</span>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>"Harga jelas, tidak ada biaya tambahan.ganti lcd redmi dateng ke rumah langsung jadi alhamdulillah Recommended!"</p>
+      <span>- kang uzi nasgor 77,ngrembel gunungpati</span>
+    </div>
+    
+      <div class="review-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>"Pengerjaan Rapi 20menit jadi ganti LCD Samsung"</p>
+      <span>- yoga,pelalangan gunungpati</span>
+    </div>
+    
+      <div class="review-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>"Harga Murah Datang Kerumah Rapi joss pokok e"</p>
+      <span>- pradita, karangsari gunungpati</span>
+    </div>
+
+  </div>
+</section>
+
+<section>
+<h2>Layanan</h2>
+<div class="service-grid">
+
+  <div class="service-card">
+    <div class="icon">📱</div>
+    <span>Ganti LCD</span>
+    <small>Semua tipe HP Baik Android Atau Iphone Harga Murah Tentunya Kualitas Juga Bagus</small>
+  </div>
+  
+  <div class="service-card">
+    <div class="icon">🔋</div>
+    <span>Ganti Baterai</span>
+    <small>Original & OEM Android Iphone Double Power Di Utamakan Karena Kualitas Bagus tentunya</small>
+  </div>
+
+  <div class="service-card">
+    <div class="icon">🔌</div>
+    <span>Connector Cas</span>
+    <small>Semua Type Hp Micro Atau Type C </small>
+  </div>
+
+  <div class="service-card">
+    <div class="icon">💾</div>
+    <span>Software</span>
+    <small>Flash & reset (Virus Iklan Tanpa Data Hilang) </small>
+  </div>
+
+</div>
+
+
+<h2>Pesan Servis</h2>
+<input id="nama" placeholder="Nama Pelanggan">
+<input id="tipe" placeholder="Tipe HP">
+<select id="layanan">
+<option>Ganti LCD</option>
+<option>Ganti Baterai</option>
+<option>Ganti Connector Cas</option>
+<option>Software</option>
+<option>Lainnya</option>
+</select>
+<textarea id="keluhan" placeholder="Jelaskan kerusakan"></textarea>
+
+<button onclick="pesan()">Hubungi WhatsApp</button>
+<a href="tel:+6289659101070" class="tel-btn">
+📞 Telepon Sekarang
+</a>
+
+</section>
+
+<section id="harga-servis">
+  <div class="container">
+    <h2>Daftar Harga Servis HP</h2>
+    
+    <h2>LCD mulai dari 200k</h2>
+   
+
+ <div class="brand-grid">
+
+  <div class="brand-card">
+    <h3>Samsung</h3>
+
+    <div class="price-item">
+      <span>LCD</span>
+      <b>Mulai dari Rp300K</b>
+    </div>
+
+    <div class="price-item">
+      <span>Baterai</span>
+      <b>Mulai dari Rp150K</b>
+    </div>
+
+    <div class="price-item">
+      <span>Connector Cas</span>
+      <b>Mulai dari Rp100K</b>
+    </div>
+
+    <div class="price-item">
+      <span>Software</span>
+      <b>Mulai dari Rp75K</b>
+    </div>
+
+    <p class="price-note">*Harga estimasi.</p>
+    
+      <p class="price-note">
+*Harga mulai dari 200k. Biaya dapat berbeda tergantung tipe HP dan harga sparepart saat pemesanan.
+</p>
+
+  </div>
+
+  <div class="brand-card">
+    <h3>Xiaomi</h3>
+
+    <div class="price-item">
+      <span>LCD</span>
+      <b>Mulai dari Rp250K</b>
+    </div>
+
+    <div class="price-item">
+      <span>Baterai</span>
+      <b>Mulai dari Rp120K</b>
+    </div>
+
+    <div class="price-item">
+      <span>Connector Cas</span>
+      <b>Mulai dari Rp80K</b>
+    </div>
+
+    <div class="price-item">
+      <span>Software</span>
+      <b>Mulai dari Rp75K</b>
+    </div>
+
+    <p class="price-note">*Harga estimasi.</p>
+    
+      <p class="price-note">
+*Harga mulai dari 200k. Biaya dapat berbeda tergantung tipe HP dan harga sparepart saat pemesanan.
+</p>
+
+  </div>
+
+  <div class="brand-card">
+    <h3>Oppo</h3>
+
+    <div class="price-item">
+      <span>LCD</span>
+      <b>Mulai dari Rp250K</b>
+    </div>
+
+    <div class="price-item">
+      <span>Baterai</span>
+      <b>Mulai dari Rp120K</b>
+    </div>
+
+    <div class="price-item">
+      <span>Connector Cas</span>
+      <b>Mulai dari Rp80K</b>
+    </div>
+
+    <div class="price-item">
+      <span>Software</span>
+      <b>Mulai dari Rp75K</b>
+    </div>
+
+    <p class="price-note">*Harga estimasi.</p>
+    
+      <p class="price-note">
+*Harga mulai dari 200k. Biaya dapat berbeda tergantung tipe HP dan harga sparepart saat pemesanan.
+</p>
+
+  </div>
+
+  <div class="brand-card">
+    <h3>Vivo</h3>
+
+    <div class="price-item">
+      <span>LCD</span>
+      <b>Mulai dari Rp250K</b>
+    </div>
+
+    <div class="price-item">
+      <span>Baterai</span>
+      <b>Mulai dari Rp120K</b>
+    </div>
+
+    <div class="price-item">
+      <span>Connector Cas</span>
+      <b>Mulai dari Rp80K</b>
+    </div>
+
+    <div class="price-item">
+      <span>Software</span>
+      <b>Mulai dari Rp75K</b>
+    </div>
+
+    <p class="price-note">*Harga estimasi.</p>
+    
+      <p class="price-note">
+*Harga mulai dari 200k. Biaya dapat berbeda tergantung tipe HP dan harga sparepart saat pemesanan.
+</p>
+
+  </div>
+
+  <div class="brand-card">
+    <h3>Realme</h3>
+
+    <div class="price-item">
+      <span>LCD</span>
+      <b>Mulai dari Rp250K</b>
+    </div>
+
+    <div class="price-item">
+      <span>Baterai</span>
+      <b>Mulai dari Rp120K</b>
+    </div>
+
+    <div class="price-item">
+      <span>Connector Cas</span>
+      <b>Mulai dari Rp80K</b>
+    </div>
+
+    <div class="price-item">
+      <span>Software</span>
+      <b>Mulai dari Rp75K</b>
+    </div>
+
+    <p class="price-note">*Harga estimasi.</p>
+    
+      <p class="price-note">
+*Harga mulai dari 200k. Biaya dapat berbeda tergantung tipe HP dan harga sparepart saat pemesanan.
+</p>
+
+  </div>
+
+  <div class="brand-card">
+    <h3>iPhone</h3>
+
+    <div class="price-item">
+      <span>LCD</span>
+      <b>Mulai dari Rp300K</b>
+    </div>
+
+    <div class="price-item">
+      <span>Baterai</span>
+      <b>Mulai dari Rp200K</b>
+    </div>
+
+    <div class="price-item">
+      <span>Connector Cas</span>
+      <b>Mulai dari Rp200K</b>
+    </div>
+
+    <p class="price-note">*Harga estimasi.</p>
+    
+    <p class="price-note">
+*Harga mulai dari 200k. Biaya dapat berbeda tergantung tipe HP dan harga sparepart saat pemesanan.
+</p>
+    
+  </div>
+
+</div>
+
+ <div class="harga-tambahan">
+  <h3>⚡ Servis Umum</h3>
+
+  <div class="service-grid">
+
+    <div class="service-card">
+      <h4>Mati Total</h4>
+      <p>Rp150K - 600K</p>
+    </div>
+
+    <div class="service-card">
+      <h4>Kena Air</h4>
+      <p>Rp100K</p>
+    </div>
+
+    <div class="service-card">
+      <h4>Bypass FRP</h4>
+      <p>100k</p>
+    </div>
+
+    <div class="service-card">
+      <h4>Speaker</h4>
+      <p>Rp80k</p>
+    </div>
+
+    <div class="service-card">
+      <h4>Mic</h4>
+      <p>Rp80K</p>
+    </div>
+
+  </div>
+</div>
+       
+    <div class="premium-pricing">
+  <h3>💎 Harga Jasa Pemasangan (Tanpa Sparepart)</h3>
+  <p class="subtext">Estimasi jasa teknisi. Harga bisa berubah tergantung tingkat kesulitan & tipe HP.</p>
+
+  <div class="price-grid">
+
+    <div class="price-card highlight">
+      <div class="badge">LCD ANDROID</div>
+      <h4>LCD Android</h4>
+      <div class="price">Rp100K - 150K</div>
+      <p>Jasa pemasangan LCD semua tipe Android</p>
+    </div>
+
+    <div class="price-card highlight">
+      <div class="badge">LCD IPHONE</div>
+      <h4>LCD iPhone</h4>
+      <div class="price">Rp150K - 300K</div>
+      <p>Pemasangan LCD iPhone semua seri</p>
+    </div>
+
+    <div class="price-card highlight">
+      <div class="badge">BATTERY ANDROID</div>
+      <h4>Baterai Android</h4>
+      <div class="price">Rp50K - 100K</div>
+      <p>Jasa ganti baterai Android</p>
+    </div>
+
+    <div class="price-card highlight">
+      <div class="badge">BATTERY IPHONE</div>
+      <h4>Baterai iPhone</h4>
+      <div class="price">Rp100K - 200K</div>
+      <p>Jasa ganti baterai iPhone</p>
+    </div>
+
+  </div>
+</div>
+
+    <div class="wa-box">
+      <h3>Tidak menemukan tipe HP Anda?</h3>
+      <p>Konsultasikan gratis melalui WhatsApp.</p>
+
+      <a href="https://wa.me/6289659101070?text=Halo%20GService%2C%20saya%20ingin%20menanyakan%20estimasi%20biaya%20servis."
+         class="wa-btn">
+         Chat WhatsApp
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+#harga-servis{
+padding:60px 20px;
+background:#f8fafc;
+}
+
+#harga-servis .container{
+max-width:1100px;
+margin:auto;
+}
+
+#harga-servis h2{
+text-align:center;
+font-size:32px;
+margin-bottom:10px;
+}
+
+.subtitle{
+  font-size:18px;
+  font-weight:700;
+  color:#ffffff;
+  letter-spacing:0.5px;
+  text-shadow:0 2px 10px rgba(0,0,0,0.35);
+}
+
+.brand-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.brand-card{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.brand-card h3{
+color:#2563eb;
+margin-bottom:15px;
+}
+
+.brand-card ul{
+padding-left:18px;
+line-height:1.8;
+}
+
+.harga-tambahan{
+margin-top:40px;
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:12px;
+  margin-top:15px;
+}
+
+.service-card{
+  background:linear-gradient(135deg,#ffffff,#f1f5f9);
+  border:1px solid rgba(37,99,235,0.08);
+  border-radius:16px;
+  padding:16px;
+  text-align:center;
+  transition:0.25s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+.service-card::before{
+  content:"";
+  position:absolute;
+  top:-50%;
+  left:-50%;
+  width:200%;
+  height:200%;
+  background:radial-gradient(circle, rgba(37,99,235,0.08), transparent 60%);
+  transform:rotate(25deg);
+}
+
+.service-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 30px rgba(37,99,235,0.15);
+}
+
+.service-card h4{
+  margin:0;
+  font-size:14px;
+  color:#1e40af;
+  position:relative;
+}
+
+.service-card p{
+  margin-top:8px;
+  font-weight:bold;
+  color:#16a34a;
+  font-size:13px;
+  position:relative;
+}
+
+.wa-box{
+margin-top:40px;
+text-align:center;
+background:#0f172a;
+color:white;
+padding:30px;
+border-radius:15px;
+}
+
+.wa-btn{
+display:inline-block;
+margin-top:15px;
+padding:14px 25px;
+background:#25D366;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+}
+
+.wa-btn:hover{
+opacity:.9;
+}
+
+.premium-pricing{
+  margin-top:30px;
+  padding:25px;
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  border-radius:18px;
+  color:white;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.premium-pricing h3{
+  margin-bottom:5px;
+  font-size:22px;
+}
+
+.premium-pricing .subtext{
+  color:#cbd5e1;
+  font-size:13px;
+  margin-bottom:20px;
+}
+
+.price-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+}
+
+.price-card{
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.1);
+  padding:18px;
+  border-radius:15px;
+  backdrop-filter: blur(10px);
+  transition:0.3s;
+  position:relative;
+}
+
+.price-card:hover{
+  transform:translateY(-5px);
+  background:rgba(255,255,255,0.1);
+}
+
+.price-card h4{
+  margin:10px 0 5px;
+}
+
+.price{
+  font-size:20px;
+  font-weight:bold;
+  color:#22c55e;
+  margin-bottom:8px;
+}
+
+.price-card p{
+  font-size:12px;
+  color:#cbd5e1;
+}
+
+.badge{
+  position:absolute;
+  top:10px;
+  right:10px;
+  background:#22c55e;
+  color:#0f172a;
+  font-size:10px;
+  padding:4px 8px;
+  border-radius:999px;
+  font-weight:bold;
+}
+
+.price-card.highlight{
+  border:1px solid #22c55e;
+  box-shadow:0 0 20px rgba(34,197,94,0.25);
+}
+</style>
+
+<section>
+<h2>📍 Area Layanan</h2>
+
+<div class="area-grid">
+  
+    <div class="area-card">Ungaran Barat</div>
+    
+      <div class="area-card">Ungaran timur</div>
+      
+        <div class="area-card">Gunungpati</div>
+
+  <div class="area-card">Tembalang</div>
+  
+  <div class="area-card">Banyumanik</div>
+  
+  <div class="area-card">Genuk</div>
+  
+  <div class="area-card">Ngaliyan</div>
+  
+
+</div>
+
+      <a href="servis-hp-panggilan-semarang.html" class="article-btn">
+    📖 Baca Artikel Lengkap GService
+</a>
+
+</section>
+
+<section style="padding:70px 16px;background:linear-gradient(180deg,#f1f5f9,#ffffff);">
+
+  <div style="
+    max-width:950px;
+    margin:auto;
+    background:#ffffff;
+    border-radius:24px;
+    box-shadow:0 20px 50px rgba(2,6,23,0.12);
+    overflow:hidden;
+    border:1px solid #e2e8f0;
+  ">
+
+    <!-- HEADER -->
+    <div style="padding:28px 26px 10px 26px;">
+      
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+
+        <h2 style="margin:0;font-size:22px;color:#0f172a;">
+          📍 Lokasi GService Semarang
+        </h2>
+
+        <div style="
+          background:#22c55e;
+          color:white;
+          padding:6px 12px;
+          border-radius:999px;
+          font-size:12px;
+          font-weight:bold;
+          box-shadow:0 6px 14px rgba(34,197,94,0.25);
+        ">
+          ● OPEN NOW
+        </div>
+
+      </div>
+
+      <p style="margin:8px 0 0;color:#64748b;font-size:14px;">
+        Servis HP panggilan cepat • Bisa datang ke lokasi Anda
+      </p>
+
+      <div style="margin-top:10px;font-size:13px;color:#334155;">
+        ⭐ 5.0 Rating • ⚡ Respon < 10 Menit • 🔧 Teknisi Berpengalaman
+      </div>
+
+    </div>
+
+    <!-- MAP -->
+    <div style="padding:0 18px 18px 18px;">
+      <iframe 
+        src="https://www.google.com/maps?q=-7.0886038,110.3627684&z=18&output=embed"
+        width="100%" 
+        height="330" 
+        style="
+          border:0;
+          border-radius:18px;
+          box-shadow:0 12px 25px rgba(0,0,0,0.10);
+        "
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <!-- BUTTONS -->
+    <div style="
+      display:flex;
+      gap:12px;
+      padding:0 18px 26px 18px;
+      flex-wrap:wrap;
+    ">
+
+      <!-- MAP BUTTON -->
+      <a href="https://www.google.com/maps?q=-7.0886038,110.3627684"
+         target="_blank"
+         style="
+          flex:1;
+          text-align:center;
+          padding:14px;
+          border-radius:14px;
+          background:linear-gradient(135deg,#2563eb,#1d4ed8);
+          color:white;
+          text-decoration:none;
+          font-weight:600;
+          box-shadow:0 10px 20px rgba(37,99,235,0.25);
+          transition:0.2s;
+         "
+         onmouseover="this.style.transform='translateY(-2px)'"
+         onmouseout="this.style.transform='translateY(0)'">
+        🧭 Navigasi Maps
+      </a>
+
+    </a>
+
+
+      <section class="promo-banner">
+  <img src="banner-gservice.jpg"
+       alt="GService Servis HP Panggilan Semarang">
+</section>
+
+      <!-- WA BUTTON -->
+      <a href="https://wa.me/6289659101070"
+         target="_blank"
+         style="
+          flex:1;
+          text-align:center;
+          padding:14px;
+          border-radius:14px;
+          background:linear-gradient(135deg,#22c55e,#16a34a);
+          color:white;
+          text-decoration:none;
+          font-weight:600;
+          box-shadow:0 10px 20px rgba(34,197,94,0.25);
+         "
+         onmouseover="this.style.transform='translateY(-2px)'"
+         onmouseout="this.style.transform='translateY(0)'">
+        💬 Chat Teknisi
+      </a>
+      
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer id="footer">
+  <p>© 2026 GService Semarang</p>
+  <p>Service HP Panggilan & Konter</p>
+  <p>Service Hp Murah Semarang</p>
+</footer>
+
+<script>
+function pesan(){
+let nomor='6289659101070';
+
+let text=`Halo GService, saya ingin konsultasi.
+
+Nama: ${document.getElementById('nama').value}
+Tipe HP: ${document.getElementById('tipe').value}
+Layanan: ${document.getElementById('layanan').value}
+Keluhan: ${document.getElementById('keluhan').value}
+
+Mohon informasi estimasi biaya dan ketersediaan sparepart.`;
+
+window.open('https://wa.me/'+nomor+'?text='+encodeURIComponent(text),'_blank');
+}
+
+</script>
+
+<a href="https://wa.me/6289659101070" class="floating-wa" title="Chat WhatsApp">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width:40px;height:40px;">
+</a>
+
+<a href="https://wa.me/6289659101070?text=Halo%20GService%2C%20saya%20mau%20servis%20HP"
+   class="sticky-wa">
+   💬 Order Sekarang • Respon 10 Menit
+</a>
+
+<script>
+const sticky = document.querySelector('.sticky-wa');
+const footer = document.getElementById('footer');
+
+window.addEventListener('scroll', function () {
+  const footerTop = footer.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+
+  if (footerTop <= windowHeight) {
+    // footer terlihat → sembunyikan sticky
+    sticky.style.transform = "translateY(100%)";
+    sticky.style.opacity = "0";
+  } else {
+    // masih di atas footer → tampilkan sticky
+    sticky.style.transform = "translateY(0)";
+    sticky.style.opacity = "1";
+  }
+});
+</script>
+
+</body>
+</html>
